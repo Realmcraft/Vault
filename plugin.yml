@@ -1,10 +1,9 @@
-name: ${project.name}
-version: ${project.version}-b${BUILD_NUMBER}
-description: ${project.description}
-authors: [cereal, Sleaker, mung3r]
-website: ${project.url}
+name: Vault
+version: 0.1
+description: Edited version of vault (for RCWars integration). I take no credit for 99% of this plugin (SgtMjrME)
+authors: [cereal, Sleaker, mung3r, SgtMjrME]
 
-main: ${mainClass}
+main: net.milkbowl.vault.Vault
 load: startup
 
 commands:

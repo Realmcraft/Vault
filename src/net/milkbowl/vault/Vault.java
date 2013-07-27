@@ -25,7 +25,6 @@ import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import net.milkbowl.vault.chat.Chat;
-import net.milkbowl.vault.chat.plugins.Chat_DroxPerms;
 import net.milkbowl.vault.chat.plugins.Chat_GroupManager;
 import net.milkbowl.vault.chat.plugins.Chat_Permissions3;
 import net.milkbowl.vault.chat.plugins.Chat_PermissionsEx;
@@ -43,7 +42,6 @@ import net.milkbowl.vault.economy.plugins.Economy_BOSE6;
 import net.milkbowl.vault.economy.plugins.Economy_BOSE7;
 import net.milkbowl.vault.economy.plugins.Economy_CommandsEX;
 import net.milkbowl.vault.economy.plugins.Economy_Craftconomy;
-import net.milkbowl.vault.economy.plugins.Economy_Craftconomy3;
 import net.milkbowl.vault.economy.plugins.Economy_CurrencyCore;
 import net.milkbowl.vault.economy.plugins.Economy_Dosh;
 import net.milkbowl.vault.economy.plugins.Economy_EconXP;
@@ -60,8 +58,8 @@ import net.milkbowl.vault.economy.plugins.Economy_iConomy4;
 import net.milkbowl.vault.economy.plugins.Economy_iConomy5;
 import net.milkbowl.vault.economy.plugins.Economy_iConomy6;
 import net.milkbowl.vault.economy.plugins.Economy_SDFEconomy;
+import net.milkbowl.vault.economy.plugins.WarPoints;
 import net.milkbowl.vault.permission.Permission;
-import net.milkbowl.vault.permission.plugins.Permission_DroxPerms;
 import net.milkbowl.vault.permission.plugins.Permission_GroupManager;
 import net.milkbowl.vault.permission.plugins.Permission_Permissions3;
 import net.milkbowl.vault.permission.plugins.Permission_PermissionsBukkit;
@@ -171,9 +169,6 @@ public class Vault extends JavaPlugin {
         // Try to load mChat
         hookChat("mChat", Chat_mChat.class, ServicePriority.Highest, "net.D3GN.MiracleM4n.mChat");
 
-        // Try to load DroxPerms Chat
-        hookChat("DroxPerms", Chat_DroxPerms.class, ServicePriority.Lowest, "de.hydrox.bukkit.DroxPerms.DroxPerms");
-
         // Try to load bPermssions 2
         hookChat("bPermssions2", Chat_bPermissions2.class, ServicePriority.Highest, "de.bananaco.bpermissions.api.ApiLayer");
 
@@ -217,9 +212,6 @@ public class Vault extends JavaPlugin {
 
         // Try to load Craftconomy
         hookEconomy("CraftConomy", Economy_Craftconomy.class, ServicePriority.Normal, "me.greatman.Craftconomy.Craftconomy");
-
-        // Try to load Craftconomy3
-        hookEconomy("CraftConomy3", Economy_Craftconomy3.class, ServicePriority.Normal, "com.greatmancode.craftconomy3.tools.interfaces.BukkitLoader");
 
         // Try to load eWallet
         hookEconomy("eWallet", Economy_eWallet.class, ServicePriority.Normal, "me.ethan.eWallet.ECO");
@@ -271,6 +263,9 @@ public class Vault extends JavaPlugin {
         
         // Try to load XPBank
         hookEconomy("XPBank", Economy_XPBank.class, ServicePriority.Normal, "com.gmail.mirelatrue.xpbank.XPBank");
+        
+        // Try to load WarPoints
+        hookEconomy("WarPoints", WarPoints.class, ServicePriority.Highest, "me.SgtMjrME.Object.WarPoints");
     }
 
     /**
@@ -285,9 +280,6 @@ public class Vault extends JavaPlugin {
 
         // Try to load PermissionsBukkit
         hookPermission("PermissionsBukkit", Permission_PermissionsBukkit.class, ServicePriority.Normal, "com.platymuus.bukkit.permissions.PermissionsPlugin");
-
-        // Try to load DroxPerms
-        hookPermission("DroxPerms", Permission_DroxPerms.class, ServicePriority.High, "de.hydrox.bukkit.DroxPerms.DroxPerms");
 
         // Try to load SimplyPerms
         hookPermission("SimplyPerms", Permission_SimplyPerms.class, ServicePriority.Highest, "net.crystalyx.bukkit.simplyperms.SimplyPlugin");
